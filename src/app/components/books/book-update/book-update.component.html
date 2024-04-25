@@ -1,0 +1,33 @@
+<div>
+    <form (submit)="submitForm()">
+        <div class="titulo_form">
+            <h2>Atualizar Livro</h2>
+            <span>fique a vontade para atualizar o seu livro</span>
+        </div>
+        <div class="container_input">
+            <label>Titulo:</label>
+            <input class="input_text" type="text" name="title" [(ngModel)]="book.title" required>
+        </div>
+        <div class="container_input">
+            <label>Autor:</label>
+            <input class="input_text" type="text" name="author" [(ngModel)]="book.author" required>
+        </div>
+        <div class="double_row">
+            <div class="column_row">
+                <label>Preço:</label>
+                <input class="input_number" type="number" name="price" [(ngModel)]="book.price" required>
+            </div>
+            <div class="column_row">
+                <label>Data Publicação:</label>
+                <input class="input_date" type="date" name="publicationDate" [(ngModel)]="book.publicationDate" required>
+            </div>
+        </div>
+        <div class="container_input">
+            <label>Tags:</label>
+            <input class="input_text" type="text" name="tags" [(ngModel)]="book.tags" required>
+        </div>
+        <div class="container_button">
+            <button class="button_atualizar" type="submit">Atualizar</button>
+        </div>
+    </form>
+</div>

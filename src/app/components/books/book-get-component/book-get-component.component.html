@@ -1,0 +1,27 @@
+<main class="container">
+    <div class="button_cadastrar_livro_container">
+        <button class="button_cadastrar_livro" (click)="createBook()">Cadastrar Livro</button>
+    </div>
+    <div class="box-container" *ngIf="!isLoading || books.length > 0; else loading">
+        <div *ngFor="let book of books" class="box">
+            <div class="items">
+                <h2>{{ book.title }}</h2>
+                <p>{{ book.author }}</p>
+                <p>R$ {{ book.price }}</p>
+                <p><span>data Publicação: </span>{{ book.publicationDate | date: 'dd/MM/yyyy' }}</p>
+                <p>{{ book.tags }}</p>
+            </div>
+            <div class="container_buttons">
+                <button class="buttons_geral button_edit" (click)="updateBook(book.id)">Editar</button>
+                <button class="buttons_geral button_delete"(click)="deleteBook(book.id)">deletar</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<ng-template #loading>
+    <div class="loading">
+        <p>Carregando...</p>
+    </div>
+</ng-template>
